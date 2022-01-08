@@ -1,33 +1,65 @@
-# Project Title
+# Loan Qualifier Application
 
-Just after the title, introduce your project by describing attractively what the project is about and what is the main problem that inspires you to create this project or what is the main contribution for the potential user of your project.
+The loan qualifier application is a command line interface application that efficiently matches up the borrower with the banks offering the loans meeting the borrower's profile and needs. It solves the issue of borrowers haphazardly submitting multiple loan applications to multiple banks and reduces the banks' loan application backlog by quickly identifying qualified borrowers. 
+
 
 ---
 
 ## Technologies
 
-Describe the technologies required to use your project such as programming languages, libraries, frameworks, and operating systems. Be sure to include the specific versions of any critical dependencies that you have used in the stable version of your project.
+The loan qualifier application leverages Python 3.8+ and utilizes the following project dependencies:
+- Fire
+- Questionary
+- Sys
+- csv
+- pathlib
 
 ---
 
 ## Installation Guide
 
-In this section, you should include detailed installation notes containing code blocks and screenshots.
+The loan qualifer application is hosted on the following GitHub repository at: https://github.com/nguyenthuyt/loan_qualifier_app   
+
+Before running the application, first install the following dependencies:
+
+```python
+pip install fire
+pip install questionary
+```
+
+
 
 ---
 
 ## Usage
 
-This section should include screenshots, code blocks, or animations explaining how to use your project.
+Upon launching the loan qualifier application, you will be prompted with the following request to enter the location of bank data. Ensure the bank data file is formatted as a csv and enter the file path. 
+
+```python
+Enter a file path to a rate-sheet (.csv):
+```
+
+Next you will be prompted with a series of questions. Once a response has been inputted for each of the questions, the application will calculate and display the monthly debt to income ratio and loan to value ratio. Additionally, the application will return the number of qualifying loans found based on the responses provided. See below for example.
+
+![Gitbash screen with loan qualifier application](images/LQapp.png)
+
 
 ---
 
 ## Contributors
 
-In this section, list all the people who contribute to this project. You might want recruiters or potential collaborators to reach you, so include your contact email and, optionally, your LinkedIn or Twitter profile.
+The loan qualifier application was created as part of the Rice Fintech Bootcamp 2022 Program by:
+
+Thuy Nguyen
+
+Email: nguyen_thuyt@yahoo.com
+
+LinkedIn: nguyenthuyt
+
+
 
 ---
 
 ## License
 
-When you share a project on a repository, especially a public one, it's important to choose the right license to specify what others can and can't with your source code and files. Use this section to include the license you want to use.
+MIT
