@@ -119,8 +119,6 @@ def save_qualifying_loans(qualifying_loans):
     if len(qualifying_loans) == 0:
         sys.exit(f"There are no banks that meet your loan requirements.")   
 
-
-
     else:
 
 # Given that I have a list of qualifying loans, when I’m prompted to save the results, then I should be able to opt out of saving 
@@ -138,6 +136,7 @@ def save_qualifying_loans(qualifying_loans):
             output_path = Path(output_path)
             print("Writing the data to a CSV file...")
 
+# Given that I’m using the loan qualifier CLI, when I choose to save the loans, then the tool should save the results as a CSV file.
             # Open the output CSV file path using 'with open'
             with open(output_path, "w", newline="") as csvfile:
             # Create a csvwriter to hold the writer object
@@ -149,7 +148,7 @@ def save_qualifying_loans(qualifying_loans):
                     csvwriter.writerow(row)
             return qualifying_loans
     
-# Given that I’m using the loan qualifier CLI, when I choose to save the loans, then the tool should save the results as a CSV file.
+
 
 
 

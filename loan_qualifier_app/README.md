@@ -50,7 +50,9 @@ Next you will be prompted with a series of questions. Once a response has been i
 
 ![Gitbash screen with loan qualifier application](images/LQapp.png)
 
-Once the results have been generated, the program will prompt the user with a choice to save the results or exit the application.
+Once the results have been generated, the program will prompt the user with a choice to save the results or exit the application. If the user chooses yes, the user must enter a file path, file name and set the file as a CSV. See below for example.
+
+![Gitbash screen requesting file output path](images/LQ_output_path.png)
 ---
 
 ## Contributors
