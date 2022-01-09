@@ -8,8 +8,9 @@ The loan qualifier application is a command line interface application that effi
 ## Technologies
 
 The loan qualifier application leverages Python 3.8+ and utilizes the following project dependencies:
-- Fire
-- Questionary
+* [fire](https://github.com/google/python-fire) - For the command line interface, help page, and entrypoint.
+
+* [questionary](https://github.com/tmbo/questionary) - For interactive user prompts and dialogs
 - Sys
 - csv
 - pathlib
@@ -33,6 +34,12 @@ pip install questionary
 
 ## Usage
 
+To use the loan qualifier application simply clone the repository and run the **app.py** with:
+
+```python
+python app.py
+```
+
 Upon launching the loan qualifier application, you will be prompted with the following request to enter the location of bank data. Ensure the bank data file is formatted as a csv and enter the file path. 
 
 ```python
@@ -43,7 +50,7 @@ Next you will be prompted with a series of questions. Once a response has been i
 
 ![Gitbash screen with loan qualifier application](images/LQapp.png)
 
-
+Once the results have been generated, the program will prompt the user with a choice to save the results or exit the application.
 ---
 
 ## Contributors
