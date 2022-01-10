@@ -12,7 +12,7 @@ import questionary
 from pathlib import Path
 import csv
 
-from qualifier.utils.fileio import load_csv
+from qualifier.utils.fileio import load_csv, save_csv
 
 from qualifier.utils.calculators import (
     calculate_monthly_debt_ratio,
@@ -114,7 +114,7 @@ def save_qualifying_loans(qualifying_loans):
 # Given that I’m using the loan qualifier CLI, when I run the qualifier, then the tool should prompt the user to save the results 
 # as a CSV file.
 
-    save_csv = questionary.confirm("Do you want to save the results").ask()
+    save_to_csv = questionary.confirm("Do you want to save the results").ask()
 # Given that no qualifying loans exist, when prompting a user to save a file, then the program should notify the user and exit.
     if len(qualifying_loans) == 0:
         sys.exit(f"There are no banks that meet your loan requirements.")   
@@ -123,32 +123,20 @@ def save_qualifying_loans(qualifying_loans):
 
 # Given that I have a list of qualifying loans, when I’m prompted to save the results, then I should be able to opt out of saving 
 # the file.
-        if save_csv == False:
+        if save_to_csv == False:
             sys.exit(f"Thank you for using the loan qualifier application.")
 # Given that I have a list of qualifying loans, when I choose to save the loans, the tool should prompt for a file path to save the 
 # file.            
-        elif save_csv == True:
-            # Set the output header by creating a variable called 'header'
+        elif save_to_csv == True:
+            # Set the output header by creating a variable called 'header' and define 'data' to be written to CSV file
             header = ["Lender","Max_Loan_Amount","Max_LTV","Max_DTI","Min_Credit_Score","Interest_Rate"]
-    
+            data = qualifying_loans    
             # Create a path for a new CSV file
             output_path = questionary.text("Enter a file path to save the qualifying loans list:").ask()
             output_path = Path(output_path)
             print("Writing the data to a CSV file...")
-
 # Given that I’m using the loan qualifier CLI, when I choose to save the loans, then the tool should save the results as a CSV file.
-            # Open the output CSV file path using 'with open'
-            with open(output_path, "w", newline="") as csvfile:
-            # Create a csvwriter to hold the writer object
-                csvwriter = csv.writer(csvfile)
-            # Write the header to the CSV file
-                csvwriter.writerow(header)
-            # Write the values of qualifying loans list as a row in the CSV file    
-                for row in qualifying_loans:
-                    csvwriter.writerow(row)
-            return qualifying_loans
-    
-
+            return save_csv(output_path, qualifying_loans, header)
 
 
 

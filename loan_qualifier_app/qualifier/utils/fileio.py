@@ -29,3 +29,29 @@ def load_csv(csvpath):
             data.append(row)
     return data
 
+
+def save_csv(output_path, data, header):
+    """Writes to a CSV file from path provided.
+
+    Args:
+        output_path (Path): The csv file path.
+        data : data rows written to csv file
+        header : column headers for csv file
+
+    Returns:
+        A list of lists with the rows of data to a CSV file.
+
+    """
+
+
+            # Open the output CSV file path using 'with open'
+    with open(output_path, "w", newline="") as csvfile:
+    
+            # Create a csvwriter to hold the writer object
+        csvwriter = csv.writer(csvfile)
+            # Write the header to the CSV file
+        csvwriter.writerow(header)
+            # Write the values of qualifying loans list as a row in the CSV file    
+        for row in data:
+            csvwriter.writerow(row)
+        return data    
