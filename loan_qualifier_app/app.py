@@ -133,10 +133,9 @@ def save_qualifying_loans(qualifying_loans):
             output_path = Path(output_path)
             
 # Given that I’m using the loan qualifier CLI, when I choose to save the loans, then the tool should save the results as a CSV file.
-            # Set the output header by creating a variable called 'header' and define 'data' to be written to CSV file
+            # Set the output header by creating a variable called 'header'
             header = ["Lender","Max_Loan_Amount","Max_LTV","Max_DTI","Min_Credit_Score","Interest_Rate"]
-            data = qualifying_loans    
-
+                
             # Generate message to user that CSV file is being created and call save_csv function to save qualifying loans list
             print("Saving qualifying loans to a CSV file...")
             return save_csv(output_path, qualifying_loans, header)
