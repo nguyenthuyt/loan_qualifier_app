@@ -110,32 +110,35 @@ def save_qualifying_loans(qualifying_loans):
     Args:
         qualifying_loans (list of lists): The qualifying bank loans.
     """
-    # @TODO: Complete the usability dialog for savings the CSV Files.
+    
 # Given that I’m using the loan qualifier CLI, when I run the qualifier, then the tool should prompt the user to save the results 
 # as a CSV file.
 
     save_to_csv = questionary.confirm("Do you want to save the results").ask()
 # Given that no qualifying loans exist, when prompting a user to save a file, then the program should notify the user and exit.
     if len(qualifying_loans) == 0:
-        sys.exit(f"There are no banks that meet your loan requirements.")   
+        sys.exit(f"There are no banks that meet your loan requirements. Goodbye.")   
 
     else:
 
 # Given that I have a list of qualifying loans, when I’m prompted to save the results, then I should be able to opt out of saving 
 # the file.
         if save_to_csv == False:
-            sys.exit(f"Thank you for using the loan qualifier application.")
+            sys.exit(f"Thank you for using the loan qualifier application. Goodbye.")
 # Given that I have a list of qualifying loans, when I choose to save the loans, the tool should prompt for a file path to save the 
 # file.            
         elif save_to_csv == True:
+            # Create a path for a new CSV file
+            output_path = questionary.text("Enter a file path to save the qualifying loans list (.csv):").ask()
+            output_path = Path(output_path)
+            
+# Given that I’m using the loan qualifier CLI, when I choose to save the loans, then the tool should save the results as a CSV file.
             # Set the output header by creating a variable called 'header' and define 'data' to be written to CSV file
             header = ["Lender","Max_Loan_Amount","Max_LTV","Max_DTI","Min_Credit_Score","Interest_Rate"]
             data = qualifying_loans    
-            # Create a path for a new CSV file
-            output_path = questionary.text("Enter a file path to save the qualifying loans list:").ask()
-            output_path = Path(output_path)
-            print("Writing the data to a CSV file...")
-# Given that I’m using the loan qualifier CLI, when I choose to save the loans, then the tool should save the results as a CSV file.
+
+            # Generate message to user that CSV file is being created and call save_csv function to save qualifying loans list
+            print("Saving qualifying loans to a CSV file...")
             return save_csv(output_path, qualifying_loans, header)
 
 
