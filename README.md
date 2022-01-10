@@ -48,11 +48,11 @@ Enter a file path to a rate-sheet (.csv):
 
 Next you will be prompted with a series of questions. Once a response has been inputted for each of the questions, the application will calculate and display the monthly debt to income ratio and loan to value ratio. Additionally, the application will return the number of qualifying loans found based on the responses provided. See below for example.
 
-![Gitbash screen with loan qualifier application](images/LQapp.png)
+![Gitbash screen with loan qualifier application](https://github.com/nguyenthuyt/loan_qualifier_app/blob/main/images/LQapp.PNG)
 
 Once the results have been generated, the program will prompt the user with a choice to save the results or exit the application. If the user chooses yes, the user must enter a file path, file name and set the file as a CSV. See below for example.
 
-![Gitbash screen requesting file output path](images/LQ_output_path.png)
+![Gitbash screen requesting file output path](https://github.com/nguyenthuyt/loan_qualifier_app/blob/main/images/LQ_output_path.PNG)
 ---
 
 ## Contributors
