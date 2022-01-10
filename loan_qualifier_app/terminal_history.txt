@@ -1,0 +1,50 @@
+   82  python app.py
+   83  python app.py
+   84  python app.py
+   85  python app.py
+   86  python app.py
+   87  python app.py
+   88  python app.py
+   89  python app.py
+   90  python app.py
+   91  python app.py
+   92  python app.py
+   93  git status
+   94  git add .
+   95  git commit -m "Updated README.md, added code for save_qualifying_loans function and generated qualifying_loans.csv using app"
+   96  git status
+   97  python app.py
+   98  python app.py
+   99  python app.py
+  100  python app.py
+  101  python app.py
+  102  git status
+  103  git add .
+  104  git commit -m "Added LQ_output_path image for use in README.md file, generated new qualifying_loans.csv, and made minor formatting edits to app.py"
+  105  python app.py
+  106  python app.py
+  107  python app.py
+  108  git push
+  109  python app.py
+  110  python app.py
+  111  python app.py
+  112  python app.py
+  113  python app.py
+  114  python app.py
+  115  python app.py
+  116  git status
+  117  git add .
+  118  git status
+  119  git commit -m "Defined save_csv function, moved the function from app.py to fileio.py, and made edits to app.py to incorporate the save_csv function with the save_qualifying_data function"
+  120  python app.py
+  121  python app.py
+  122  python app.py
+  123  python app.py
+  124  python app.py
+  125  python app.py
+  126  git status
+  127  git add .
+  128  git commit m- "Reorganized coding in save_qualifying_loans function and made changes to generated messages in conditional statements"
+  129  git commit -m "Reorganized coding in save_qualifying_loans function and made changes to generated messages in conditional statements"
+  130  git push
+  131  history 50 > terminal_history.txt
